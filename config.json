@@ -1,0 +1,26 @@
+{
+  "name": "AutoSSH Reverse Tunnel",
+  "version": "1.0.0",
+  "slug": "autossh",
+  "description": "Maintains an SSH reverse tunnel for Home Assistant. You need to use an ssh server you control and then you can access HA via this server",
+  "startup": "services",
+  "boot": "auto",
+  "ports": {},
+  "map": ["config"],
+  "options": {
+    "ssh_host": "your.server.com",
+    "ssh_port": 22,
+    "ssh_user": "homeassistant",
+    "remote_port": 22222,
+    "local_port": 8123,
+    "ssh_key_path": "/config/ssh/id_rsa"
+  },
+  "schema": {
+    "ssh_host": "str",
+    "ssh_port": "int",
+    "ssh_user": "str",
+    "remote_port": "int",
+    "local_port": "int",
+    "ssh_key_path": "str"
+  }
+}
